@@ -1,0 +1,3 @@
+Bug Report 3 to alarifim
+Line 451: score from deck
+In the loop, the upper bound should be state->deckCount istead of discardCount.

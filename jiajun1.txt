@@ -1,0 +1,4 @@
+Bug Report 1 to alarifim
+line 1006: Coin add bug
+Because coin is going to cleaned after each turn, so state->coin = stat->coin + # won't work.
+Fixing it by changing the line to bounos += #.

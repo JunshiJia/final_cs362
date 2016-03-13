@@ -1,0 +1,4 @@
+Bug Report 2 to alarifim
+line 440 and 451: garden card 
+The way to use full deck count is wong, because it will count the curse. 
+Fixing it by changing score += (state->handCount[player] + state->deckCount[player] + state->discardCount[player]);
