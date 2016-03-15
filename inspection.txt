@@ -1,0 +1,47 @@
+Inspection team member ONID-IDS: jiajun, alarifim, morriluk 
+
+Inspection code: alarifim's dominion.c code
+
+I am leading the inspection for alarifim.
+
+Part1: deciding what tests to run
+1. Since I found a bug in coin adding of card minion, I suggested to use the minion card
+test on his dominon.c to see if we can find the same bug.
+2. Morriluk found a bug in the scoreFor unit test for garden, he suggested to use the 
+unit test to test alarifim's dominion.c
+3. Alarifim found a bug in card adventurer when running his adventurer card test, he 
+suggested us to run the test again and try to fix the bug.
+4. Alarifim suggested that we use his complete dominion because it failed 35% of the 
+time, there might be a bug in his test file. 
+
+Part2: running the tests
+We run the tests and all the tests compiled and run successfully.
+
+Part3: analysis the results
+
+1. Coin adding bug
+We run my test on alarigim's dominion.c file, the same bug is found and the add coin 
+is not working correctly. I suggested to look at the dominion.c file in the minion
+card funcion: for the coin adding, the line is state->coin = state->coin + 2. We 
+believed the bug is here.
+
+2. DeckCcount bug for scoreFor
+We run morriluk's scoreFor unit test and the test failed. We looked at the source code 
+and we believed the line with gardens is the bug.  Also the look for score from deck might 
+be wrong becasue it uses discardCount.
+
+3. Adventurer card draws two cards instead of two treature cards
+In alarifim's adventurer random tester, the test shows the program failed becasue the 
+card effect did not draw 2 treature cards but 2 normal cards.
+
+4. Alarifim's dominion complete test
+We run the test and it failed 35% of the time. We believed there is a bug in his test code
+because the ratio is too high. We looked at the code and located the bug at the line with 
+1/3 change have empty deck. Because if the deckCount is zero, the test is going to fail.
+
+Part4: trying to fix bugs and more discussion
+
+1. Coin adding: We changed his 'states->coin = states->coin + 2' into '*bonus += 2' and 
+the test passed. 
+We had more discussion about this bug, because other card 
+
